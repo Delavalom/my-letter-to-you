@@ -4,6 +4,7 @@ import { ChevronFirst, ChevronLast, Heart } from "lucide-react";
 import { Pause } from "lucide-react";
 import { useCarousel } from "use-carousel-hook";
 import { type RefObject } from "react";
+import data from "./data";
 
 export default function Home() {
   const { ref, previous, next, reset } = useCarousel();
@@ -17,37 +18,24 @@ export default function Home() {
 
       <ul
         ref={ref as RefObject<HTMLUListElement>}
-        className="w-full flex overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory scroll-px-10 gap-2"
+        className="w-full flex overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory gap-2"
       >
-        <div className="w-full relative shrink-0 snap-start snap-always bg-orange-100">
-          <div className="w-full h-full absolute bottom-0 z-10 flex items-center justify-center flex-col bg-gradient-to-t from-black">
-            <h2 className="mt-4 text-xl font-bold text-white">New York</h2>
-            <p className="text-sm text-white/50">United States</p>
+        {data.map((item) => (
+          <div
+            key={item.content}
+            className="w-full relative shrink-0 snap-start snap-always bg-black"
+          >
+            <div className="w-full h-full absolute bottom-0 z-10 flex items-center justify-center flex-col bg-gradient-to-t from-black">
+              <h2 className="mt-4 text-xl font-bold text-white">{item.content}</h2>
+              <p className="text-sm text-white/50">United States</p>
+            </div>
+            {item.image && <Image
+              src={item.image}
+              alt="un verano sin ti"
+              className="w-full h-full object-cover"
+            />}
           </div>
-          <Image
-            src={unVeranoSinTi}
-            alt="un verano sin ti"
-            className="w-full h-full"
-          />
-        </div>
-
-        <Image
-          src={unVeranoSinTi}
-          alt="un verano sin ti"
-          className="w-full h-full"
-        />
-
-        <Image
-          src={unVeranoSinTi}
-          alt="un verano sin ti"
-          className="w-full h-full"
-        />
-
-        <Image
-          src={unVeranoSinTi}
-          alt="un verano sin ti"
-          className="w-full h-full"
-        />
+        ))}
       </ul>
 
       <div className="flex w-full justify-center items-center px-4">
