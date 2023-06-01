@@ -1,10 +1,8 @@
+import { ChevronFirst, ChevronLast, Heart, Pause } from "lucide-react";
 import Image from "next/image";
-import unVeranoSinTi from "public/un_verano_sin_ti.webp";
-import { ChevronFirst, ChevronLast, Heart } from "lucide-react";
-import { Pause } from "lucide-react";
-import { useCarousel } from "use-carousel-hook";
 import { type RefObject } from "react";
-import data from "./data";
+import { useCarousel } from "use-carousel-hook";
+import data from "../data";
 
 export default function Home() {
   const { ref, previous, next, reset } = useCarousel();
