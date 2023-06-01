@@ -27,7 +27,7 @@ export default function Home() {
           >
             <div className="w-full h-full absolute bottom-0 z-10 flex items-center justify-center flex-col bg-gradient-to-t from-black">
               <h2 className="mt-4 text-xl font-bold text-white">{item.content}</h2>
-              <p className="text-sm text-white/50">United States</p>
+              {/* <p className="text-sm text-white/50">United States</p> */}
             </div>
             {item.image && <Image
               src={item.image}
