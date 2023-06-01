@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { ChevronFirst, ChevronLast, Heart, Pause } from "lucide-react";
 import Image from "next/image";
 import { type RefObject } from "react";
@@ -30,6 +31,7 @@ export default function Home() {
             {item.image && <Image
               src={item.image}
               alt="un verano sin ti"
+              priority={true}
               className="w-full h-full object-cover"
             />}
           </div>
